@@ -18,12 +18,12 @@ def test_get_all_books():
     assert response.status_code == 200
     assert len(response.json()) > 0
 
-#Asserts that book by id = 2 has correct information and data types
+#Asserts that book by id = 1 has correct information and data types
 def test_get_book_by_id():
-    response = requests.get(f'{BASE_URL}/books/2')
+    response = requests.get(f'{BASE_URL}/books/1')
     assert response.status_code == 200
     #Asserts book information
-    assert response.json()['id'] == 2
+    assert response.json()['id'] == 1
     assert response.json()['title'] == "The Alchemist"
     assert response.json()['author'] == "Paulo Coelho"
     assert response.json()['publication_date'] == "10-10-1988"
@@ -42,22 +42,27 @@ def test_create_book(sample_book):
     assert response.json()['author'] == "Sample Author"
     assert response.json()['publication_date'] == "01-01-2000"
 
-#Asserts we are able to update a book with sample book fixture
+#Asserts we are able to update the last created book with payload
 def test_update_book(sample_book):
-    response = requests.put(f'{BASE_URL}/books/3', json=sample_book)
+    payload = {
+    "title": "Updated Book",
+    "author": "Updated Author",
+    "publication_date": "01-01-2000"
+    }
+    response = requests.put(f'{BASE_URL}/books/5', json=payload)
     assert response.status_code == 200
-    assert response.json()['title'] == sample_book['title']
-    assert response.json()['author'] == sample_book['author']
-    assert response.json()['publication_date'] == sample_book['publication_date']
+    assert response.json()['title'] == payload['title']
+    assert response.json()['author'] == payload["author"]
+    assert response.json()['publication_date'] == payload["publication_date"]
 
 
-#Asserts we are able to delete the first book
+#Asserts we are able to delete the last created book using POST request
 def test_delete_book():
-    response = requests.delete(f'{BASE_URL}/books/1')
+    response = requests.delete(f'{BASE_URL}/books/5')
     assert response.status_code == 200
     assert response.json()["message"] == "Book deleted"
 
-    response = requests.get(f'{BASE_URL}/books/1')
+    response = requests.get(f'{BASE_URL}/books/5')
     assert response.status_code == 404
 
 

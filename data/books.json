@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+        "publication_date": "10-10-1988"
+    },
+    {
+        "id": 2,
+        "title": "The Lean Startup",
+        "author": "Eric Ries",
+        "publication_date": "05-05-2011"
+    },
+    {
+        "id": 3,
+        "title": "The Shiningg",
+        "author": "Stephen King",
+        "publication_date": "01-28-1977"
+    },
+    {
+        "id": 4,
+        "title": "The Personal MBA",
+        "author": "Josh Kaufman",
+        "publication_date": "12-30-2010"
+    }
+]
