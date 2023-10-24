@@ -1,4 +1,4 @@
-# python-api-examples
+# python-api-testing-example
 Pytest is a mature full-featured Python testing frame that helps you write and run tests in Python.
 The requests module allows you to send HTTP requests using Python
 
@@ -9,8 +9,8 @@ The requests module allows you to send HTTP requests using Python
 * To download report librart: `pip install pytest-html`
 
 ## Running tests
-* First run the Flask server in order to get access to the 'Book' endpoints: `python3 app.py`
-* Run tests: `pytest tests/tests_books.py`
+* First run the Flask server in order to get access to the Book endpoints: `python3 app.py`
+* Run the tests in another terminal tab: `pytest tests/tests_books.py`
 
 
 ## Create tests reports
