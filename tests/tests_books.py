@@ -65,6 +65,15 @@ def test_delete_book():
     response = requests.get(f'{BASE_URL}/books/5')
     assert response.status_code == 404
 
+#Asserts we are Not able to update a nonexistent book
+def test_update_nonexistent_book(sample_book):
+    response = requests.put(f'{BASE_URL}/books/999', json=sample_book)
+    assert response.status_code == 404
+
+#Asserts we are Not able to Delete a nonexistent book
+def test_delete_nonexistent_book():
+    response = requests.delete(f'{BASE_URL}/books/999')
+    assert response.status_code == 404 
 
 if __name__ == '__main__':
     pytest.main()
