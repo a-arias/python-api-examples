@@ -9,8 +9,10 @@ The requests module allows you to send HTTP requests using Python
 * To download report librart: `pip install pytest-html`
 
 ## Running tests
-* First run the Flask server in order to get access to the Book endpoints: `python3 app.py`
-* Run the tests in another terminal tab: `pytest tests/tests_books.py`
+* Clone the repo: `git clone git@github.com:a-arias/python-api-examples.git`
+* Open folder `cd python-api-examples`
+* run the Flask server in order to get access to the Book endpoints: `python3 app.py`
+* Run the tests in another terminal tab with: `pytest tests/tests_books.py`
 
 
 ## Create tests reports
